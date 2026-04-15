@@ -74,7 +74,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cdseb")
 }],
-"loop": false,
+"loop": true,
 "name": &"mati",
 "speed": 5.0
 }]
@@ -91,16 +91,15 @@ script = ExtResource("1_lljgh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=289273448]
 sprite_frames = SubResource("SpriteFrames_tal30")
 animation = &"mati"
-frame = 4
-frame_progress = 1.0
+frame_progress = 0.3067068
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=745029163]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_lljgh")
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=579191252]
+[node name="HurtBox" type="Area2D" parent="." unique_id=579191252]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2007825817]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=2007825817]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_8irsu")
 debug_color = Color(0.83316916, 0.0013975245, 0.9432512, 0.41960785)

@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://fc6qfcrd0jbx" path="res://rimuru.tscn" id="4_dwbse"]
 [ext_resource type="Script" uid="uid://b6ni175h5tvyc" path="res://player.gd" id="4_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://bit0thk7benfx" path="res://art/characters/player.png" id="5_gbfbk"]
-[ext_resource type="Script" uid="uid://bv568fbw3b4r7" path="res://rimuru.gd" id="5_pkg7o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
 texture = ExtResource("1_f3sb7")
@@ -474,6 +473,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_036b0"]
 size = Vector2(10.5, 3.25)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dwbse"]
+radius = 18.027756
+
 [node name="World" type="Node2D" unique_id=1018480753]
 y_sort_enabled = true
 
@@ -487,8 +489,7 @@ tile_map_data = PackedByteArray("AAALAA8AAQAAAAEAAAAQAA0AAQAAAAEAAAADAA0AAQAAAAE
 tile_set = SubResource("TileSet_ic0uy")
 
 [node name="CharacterBody2D" parent="." unique_id=2042536047 instance=ExtResource("4_dwbse")]
-position = Vector2(176, 94)
-script = ExtResource("5_pkg7o")
+position = Vector2(141, 166)
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=889437863]
 y_sort_enabled = true
@@ -507,9 +508,17 @@ position = Vector2(12, 142)
 shape = SubResource("RectangleShape2D_036b0")
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1728352963]
+visible = false
 position = Vector2(17, 141)
 zoom = Vector2(2, 2)
 process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 12.0
+
+[node name="AtttackBox" type="Area2D" parent="player" unique_id=1908934946]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/AtttackBox" unique_id=486003450]
+position = Vector2(11, 135)
+shape = SubResource("CircleShape2D_dwbse")
+debug_color = Color(0.6248521, 0.3510425, 1, 0.41960785)
