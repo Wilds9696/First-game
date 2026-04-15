@@ -3,8 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bi2vudhi8gcqh" path="res://art/tilesets/grass.png" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://ccqcndn0clg06" path="res://art/tilesets/plains.png" id="2_036b0"]
 [ext_resource type="Texture2D" uid="uid://dht57adah275j" path="res://art/objects/objects.png" id="3_dwbse"]
+[ext_resource type="PackedScene" uid="uid://fc6qfcrd0jbx" path="res://rimuru.tscn" id="4_dwbse"]
 [ext_resource type="Script" uid="uid://b6ni175h5tvyc" path="res://player.gd" id="4_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://bit0thk7benfx" path="res://art/characters/player.png" id="5_gbfbk"]
+[ext_resource type="Script" uid="uid://bv568fbw3b4r7" path="res://rimuru.gd" id="5_pkg7o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
 texture = ExtResource("1_f3sb7")
@@ -484,6 +486,10 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAALAA8AAQAAAAEAAAAQAA0AAQAAAAEAAAADAA0AAQAAAAEAAAAbABgAAQAAAAEAAAAkABkAAQAAAAEAAAAgAAsAAQAAAAEAAAAqAA4AAQAAAAEAAAAXABEAAQAAAAAAAAATAAoAAQAAAAAAAAAGAA0AAQAAAAUAAAANABQAAQAAAAUAAAAcAAwAAQAAAAUAAAAMAAMAAQAAAAUAAAAoAAUAAQAAAAUAAAAvAA0AAQAAAAUAAAAyABoAAQAAAAUAAAAeABsAAQAAAAUAAAArABgAAQAAAAUAAAAbAAQAAQAAAAUAAAA3AAgAAQAAAAUAAAATABwAAQAAAAUAAAAFABoAAQAAAAUAAAATABcAAQAIAAYAAAAeABYAAQAIAAYAAAAlABYAAQAIAAYAAAAjAA4AAQAIAAYAAAASAA8AAQAIAAYAAAALAAsAAQAIAAYAAAAEAAQAAQAIAAYAAAADABEAAQAIAAYAAAAlABwAAQAIAAYAAAAyABcAAQAIAAYAAAAmAAkAAQAIAAYAAAAgAAUAAQAIAAYAAAASAAQAAQAIAAYAAAAvAAcAAQAIAAYAAAAzAAsAAQAIAAYAAAAYABYAAQAKAAcAAAARABQAAQAKAAcAAAAHABUAAQAKAAcAAAAMABoAAQAKAAcAAAAHAAUAAQAKAAcAAAAcAAgAAQAKAAcAAAAlAA0AAQAKAAcAAAA1AA8AAQAKAAcAAAAvABcAAQAKAAcAAAAsABwAAQAKAAcAAAAJABIAAQAGAAcAAAAOAAoAAQAGAAcAAAAPAAwAAQAGAAcAAAACAAsAAQAGAAcAAAAAAAsAAQAGAAcAAAABAAoAAQAGAAcAAAAlAA8AAQAGAAcAAAAdAA8AAQAGAAcAAAAWAAQAAQAGAAcAAAAvABYAAQAGAAcAAAA2ABcAAQAGAAcAAAA=")
 tile_set = SubResource("TileSet_ic0uy")
 
+[node name="CharacterBody2D" parent="." unique_id=2042536047 instance=ExtResource("4_dwbse")]
+position = Vector2(176, 94)
+script = ExtResource("5_pkg7o")
+
 [node name="player" type="CharacterBody2D" parent="." unique_id=889437863]
 y_sort_enabled = true
 script = ExtResource("4_pkg7o")
@@ -492,7 +498,8 @@ script = ExtResource("4_pkg7o")
 y_sort_enabled = true
 position = Vector2(11, 126)
 sprite_frames = SubResource("SpriteFrames_ikiii")
-animation = &"serang"
+animation = &"diam_kanan"
+frame_progress = 0.24956518
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=615761518]
 y_sort_enabled = true
